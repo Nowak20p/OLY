@@ -1,0 +1,170 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #F2F4F5;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+
+
+
+.pasekg{
+    width: 100%;
+    height: 100px;
+    background-color: #002F34;
+}
+.kat{
+    background-color: #fff;
+    text-align: center;
+
+}
+.kat2{
+    display:grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+
+}
+.kat > div{
+display: flex;
+justify-content: space-around;
+}
+
+.mot{
+    background-color: #F2F4F5;
+    width: 100%;
+    height: 1000px;
+    display: none;
+
+}
+
+.ele{
+    background-color: #F2F4F5;
+    width: 100%;
+    height: 1000px;
+    display: none;
+    
+}
+.dom{
+    background-color: #F2F4F5;
+    width: 100%;
+    height: 1000px;
+    display: none;
+    
+}
+.spo{
+    background-color: #F2F4F5;
+    width: 100%;
+    height: 1000px;
+    display: none;
+    
+}
+
+
+.d1 div{
+    position: relative;
+    display: grid;
+    grid-template-columns:275px auto auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    width: 95%;
+    height:200px;
+    margin-left: 40px;
+    margin-right: 50px;
+}
+.d1 div p{
+    text-align: left;
+    font-size: 21px;
+   
+}
+.cena{
+    justify-self: right;
+    margin-right: 10px;
+}
+
+
+.d1{
+    padding-top: 35px;
+}
+.d1 div img{
+    height: 190px;
+    margin: auto;
+    margin-left: 5px;
+    width: 263.6px;
+}
+
+
+
+
+.og1_szczeg .img_auto{
+    height: 380px;
+    width: 526px;
+    margin: 50px
+}
+
+.og1_szczeg{
+    top: 345px;
+    display: none;
+    position: absolute;
+    grid-template-columns:535px auto;
+    background-color: #fff;
+    width: 99%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+
+}
+.opis1{
+    grid-column: 1/ span 2;
+    width: 1000px;
+    margin-left: 10px;
+}
+.czlowiek{
+    position: relative;
+    display: grid;
+    grid-template-columns:auto auto;
+    background-color:#F2F4F5 ;
+    margin: 50px;
+   
+    
+}
+.cena_auta{
+    font-size: 30px;
+    justify-self: right;
+    margin-right: 10px;
+
+}
+.nazwa_auta{
+    font-size: 30px;
+}
+
+.og1_szczeg h2{
+    margin-left: 10px;
+}
+
+.czlowiek p{
+    
+    margin-left:15px;
+}
+.czlowiek .ziomek{
+    width: 75px;
+    height: 75px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.adres{
+    font-size: 25px;
+}
+.mapka{
+    margin-top: 0;
+    height: 270px;
+    width: 270px;
+    margin-left: 50px;
+}
+.fas{
+    top: 2px;
+    right: 2px;
+    position: absolute;
+   font-size: 30px;
+}
