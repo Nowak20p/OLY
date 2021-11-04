@@ -148,42 +148,62 @@ let y=document.querySelectorAll(".d1")
 }
 ogloszenie=document.getElementsByClassName("og1_szczeg")[0]
 
-function jakos(zdj,osoba) {
+function jakos(zdj,osoba,opis_p,nazwa) {
     this.zdj=zdj
     this.osoba=osoba
+    this.opis_p=opis_p
+    this.nazwa=nazwa
 
 
 }
 
 
 
-function jakos1(ziom,imie,numer_t) {
+function jakos1(ziom,imie,numer_t,adres_zioma) {
     this.ziom=ziom
     this.imie=imie
     this.numer_t=numer_t
+    this.adres_zioma=adres_zioma
+    
    
 }
 
 
 
+
+
+
+
 let cos=new Array()
-cos.push(new jakos("sam1.jpg",new jakos1("ziom1.jpg","Miguel","799 883 994")))
-cos.push(new jakos("sam2.jpg",new jakos1("ziom2.jpg","Thomas","235 299 173")))
-cos.push(new jakos("sam3.jpg",new jakos1("ziom3.jpg","Lidia","864 168 107")))
-cos.push(new jakos("ele1.jpg",new jakos1("ziom4.jpg","Jędrzej","978 813 577")))
-cos.push(new jakos("ele2.jpg",new jakos1("ziom5.jpg","Patrycja","691 438 633")))
-cos.push(new jakos("ele3.jpg",new jakos1("ziom6.jpg","Martyna","194 993 268")))
-cos.push(new jakos("dom1.jpg",new jakos1("ziom7.jpg","Albert","519 076 585")))
-cos.push(new jakos("dom2.jpg",new jakos1("ziom8.jpg","Róża ","798 883 994")))
-cos.push(new jakos("dom3.jpg",new jakos1("ziom9.jpg","Helena ","799 111 994")))
-cos.push(new jakos("spo1.jpg",new jakos1("ziom10.jpg","Julia","799 883 221")))
-cos.push(new jakos("spo2.jpg",new jakos1("ziom11.jpg","Mohamed","799 883 332")))
-cos.push(new jakos("spo3.jpg",new jakos1("ziom12.jpg","Aleksander ","111 222 443")))
+cos.push(new jakos("sam1.jpg",new jakos1("ziom1.jpg","Miguel","799 883 994","Adres: Brodnica, Kujawsko-pomorskie"),"Audi A4 B6 1.8T BEX 190KM SlineAuto zadbane w wersji Sline środek nie zniszczony wszystko w aucie działa i nie świecą się żadne błędy! Auto wyposażone w najlepsza jednostkę napędowa 1.8T o oznaczeniu BEX dysponująca mocą 190KM W aucie została założona instalacja LPG Audi na ta chwile nie wymaga wkładu finansowego blacharsko prezentuje się świetnie w zawieszeniu nie słychać żadnych niepokojących dźwięków. Felgi 18” z rocznymi oponami stan jak nowe. Rozrząd robiony był 20tys km temu. Ubezpieczenie i przegląd techniczny do Lutego Osoby zainteresowane zakupem zapraszam na oględziny po wcześniejszym umówieniu","1"))
+
+cos.push(new jakos("sam2.jpg",new jakos1("ziom2.jpg","Thomas","235 299 173","Adres: Łódź, Śródmieście Łódzkie"),"DO SPRZEDANIA ŚLICZNA HONDA CIVIC Z 2008R. HONDA WYPOSAŻONA JEST W REWELACYJNY SILNIK BENZYNOWY 1.4 83KM ORAZ 5 BIEGOWĄ MANUALNĄ SKRZYNIĘ BIEGÓW. Silnik ten to bezawaryjna ciesząca się świetnymi opiniami jednostka. Ponadto silnik ten posiada łańcuch rozrządu więc nowy nabywca nie musi martwić się wymianą. Honda od nowości miała tylko jednego właściciela. Jest świeżo sprowadzona z Niemiec i nie jeździła jeszcze po naszych drogach. Auto ma 100% autentyczny przebieg przebieg potwierdzony fakturami oraz ostatnim wydrukiem z TUV. Gwarancja przebiegu, przebieg będzie wpisany na fakturze. Honda jest bezwypadkowa i przepięknie się prezentuje. Posiada piękny i lśniący lakier bez jakichkolwiek oznak korozji. Wnętrze również ładnie utrzymane. Silnik oraz wszystkie podzespoły w bardzo dobrym stanie. Silnik jest suchy i pięknie pracuje. Skrzynia i sprzęgło również działają rewelacyjnie. Zawieszenie auta w bardzo dobrym stanie, żadnych niepokojących odgłosów. Auto obecnie ma założone opony wielosezonowe w bardzo dobrym stanie. Honda była na bieżąco serwisowana i nie wymaga obecnie żadnych nakładów finansowych. Honda pięknie się prezentuje i świetnie sprawdzi się jako auto miejskie oraz rodzinne na dalsze wypady. Wielkim atutem hondy jest jej ponadczasowy wygląd oraz bezawaryjność.","2"))
+
+cos.push(new jakos("sam3.jpg",new jakos1("ziom3.jpg","Lidia","864 168 107","Adres: Ruda Śląska, Śląskie"),"Sprzedam Fiata Pandę Vana z 2003 r. 1,1+LPG działa na obu paliwach Fiacik jest w bardzo dobrym stanie technicznym mimo tego że ma 18lat i posiada oczywiście lekkie wgniotki czy rysy na karoserii. Auto serwisowane na bieżąco , na dzień dzisiejszy nie wymaga absolutnie żadnego wkładu finansowego","3"))
+
+cos.push(new jakos("ele1.jpg",new jakos1("ziom4.jpg","Jędrzej","978 813 577","Adres: Kraków, Łagiewniki-Borek Fałęcki Małopolskie"),"Maszyna czysta, zadbana, czyszczona i oliwiona na bieżąco. To bardzo dobry model Pfaff, wykonany na metalowych podzespołach. Przeszyje z łatwością dżins i skórę. Pracuje cicho i stabilnie.","4"))
+
+cos.push(new jakos("ele2.jpg",new jakos1("ziom5.jpg","Patrycja","691 438 633","Adres: Piaseczno, Mazowieckie"),"Witam, do sprzedania mam konsole Xbox 360, w dobrym stanie, używana sporadycznie, sprawna wraz z okablowaniem. Do konsoli dodaję 8 gier. (Widoczne na zdjeciu). Możliwa wysyłka.","5"))
+
+cos.push(new jakos("ele3.jpg",new jakos1("ziom6.jpg","Martyna","194 993 268","Adres: Rusiec, Mazowieckie"),"Mysz do gier CORSAIR SABER PRO została zaprojektowana i przetestowana przez profesjonalistów e-sportowych, ultralekka 69g, wyposażona w elastyczny kabel z paracordu redukujący opór, który zapewnia responsywne, niczym nieskrępowane ruchy. Przyciski CORSAIR QUICKSTRIKE zapewniają, że każde kliknięcie jest natychmiastowe i responsywne, a technologia CORSAIR AXON dostarcza dane wejściowe do komputera nawet 8 razy szybciej. ","6"))
+
+cos.push(new jakos("dom1.jpg",new jakos1("ziom7.jpg","Albert","519 076 585","Adres: Tarnów, Małopolskie"),"Mamy do zaoferowania Państwu kanapę i 2 fotele ( komplet) , bardzo solidnie wykonany, funkcjonalny, praktyczny w skład którego wchodzi kanapa HADDON z funkcją spania wysuwaną do przodu i pojemnikiem na pościel oraz 2 fotele typu FINKA na giętych stelażach z tapicerowanymi podłokietnikami. Zestaw wykonany jest w prawdziwej, naturalnej skórze w całości dokoła (plecy-tyły również) , wszystko w skórze bez wstawek z eko skóry jak to często bywa u innych producentów. Siedzisko sofy na sprężynach bonelowych.","7"))
+
+cos.push(new jakos("dom2.jpg",new jakos1("ziom8.jpg","Róża ","798 883 994","Adres: Grodków, Opolskie"),"Witam sprzedam traktorek kosiarka viking cyclon z silnikiem briggsa skrzynia biegów hydrostatyczna kosisko niemalowane dwa noże cały traktor niemalowany oryginalny lakier po serwisie godny uwagi.","8"))
+
+cos.push(new jakos("dom3.jpg",new jakos1("ziom9.jpg","Helena ","799 111 994","Adres: Warszawa, Śródmieście Mazowieckie"),"brama rolowana na ocieplonym i mocnym profilu 52 mm!!! wersja ANTYWŁAMANIOWA! blokada możliwości podważenia od spodu!","9"))
+
+cos.push(new jakos("spo1.jpg",new jakos1("ziom10.jpg","Julia","799 883 221","Adres: Warszawa, Mokotów Mazowieckie"),"Rower męski koła 26 stan bardzo dobry. Serwisowany.","10"))
+
+cos.push(new jakos("spo2.jpg",new jakos1("ziom11.jpg","Mohamed","799 883 332","Adres: Brzezina, Dolnośląskie"),"Jestem drugim właścicielem. Wypadałoby sprawdzić bebechy, ponieważ trzeba będzie poprawić ew. wymienić hopka, gdyż czasem potrafi nie podać kulki. Co prawda podaje wszystkie w momencie podtrzymania magazynka, ale wątpię, że trzymanie za magazynek jest wygodne. Replikę mam około 3 lat. Wypluła max 2kg kulek.","11"))
+
+cos.push(new jakos("spo3.jpg",new jakos1("ziom12.jpg","Aleksander ","111 222 443","Adres: Tarczyn, Mazowieckie"),"Idealna na jezioro, rzekę czy staw. Wykona z włókna węglowego Wędka uzbrojona w trwałe przelotki wypełnione ceramiką Rękojeść wykonana z korka i miękkiej pianki Wykonana w estetyczny, klasyczny sposóbw komplecie pokrowiec","12"))
 
 
 
 
-
+// CRT+D zaznaczenie tego samego 
+// CRT + ^
 
 
 
@@ -196,6 +216,9 @@ function pojawianie(element) {
         document.getElementsByClassName("img_auto")[0].src=cos[element].zdj
         document.getElementsByClassName("ziomek")[0].src=cos[element].osoba.ziom
         document.getElementsByClassName("dane")[0].innerHTML=cos[element].osoba.imie+" <br> Kontakt: "+cos[element].osoba.numer_t
+        document.getElementsByClassName("adres")[0].innerHTML=cos[element].osoba.adres_zioma
+        document.getElementsByClassName("opis1")[0].innerHTML=cos[element].opis_p
+        document.getElementsByClassName("nazwa_auta")[0].innerHTML=cos[element].nazwa
     }
     else{
         ogloszenie.style.display="none";
