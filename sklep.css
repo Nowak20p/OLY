@@ -13,6 +13,10 @@ body{
     width: 100%;
     height: 100px;
     background-color: #002F34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 .kat{
     background-color: #fff;
@@ -115,7 +119,7 @@ justify-content: space-around;
 
 }
 .opis1{
-    grid-column: 1/ span 2;
+    grid-column: 1;
     width: 1000px;
     margin-left: 10px;
 }
@@ -162,9 +166,181 @@ justify-content: space-around;
     width: 270px;
     margin-left: 50px;
 }
-.fas{
+.fa-times-circle{
     top: 2px;
     right: 2px;
     position: absolute;
    font-size: 30px;
+}
+
+.fa-cart-arrow-down{
+    position: absolute;
+    bottom: 30px;
+    right: 70px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.ooo{
+    position: absolute;
+    bottom: 30px;
+    right: 220px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    
+    
+}
+
+.k1{
+    position: absolute;
+    bottom: 10px;
+    right: 200px;
+    margin: 0px;
+
+}
+
+.k2{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    margin: 0px;
+
+}
+
+.szczeg{
+    position: absolute;
+    bottom: 5px;
+    left: 270px;
+    margin: 0px;
+    font-size: 15px !important;
+}
+.pasekg div{
+    text-align: center;
+    margin-right: 20px;
+}
+
+.pasekg div p{
+    font-size: 15px;
+    color: #23E5DC;
+    
+}
+
+.pasekg div .fa-shopping-basket{
+
+font-size: 45px;
+color: #23E5DC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .przyciski{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 70px;
+}
+
+.fa-cart-arrow-down{
+    margin:10px;
+    font-size: 60px;
+    
+}
+.fa-shopping-basket{
+    margin:10px;
+    font-size: 60px;
+} */
+/* .przyciski p{
+    text-align: center;
+}
+
+.koszyk{
+    background-color: #F2F4F5;
+    width: 100vw;
+    height: 100vh;
+}
+*/
+
+
+.element_k{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    height: 200px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.iii{
+    font-size: 60px;
+}
+
+.element_k p:nth-child(2){
+    width: 300px;
+
+}
+
+
+.koszyk{
+    display: none;
+}
+
+.suma{
+ 
+}
+.kozackicos{
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+    background-color: #fff;   
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    
+}
+.kupowanie a{
+    color: black;
+    font-size: 20px;
+    
+    
+
+}
+
+.kupowanie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2F4F5;
+    width: 200px;
+    height: 90px;
+    border-radius: 33%;
+
 }
