@@ -4,9 +4,13 @@ body{
     background-color: #F2F4F5;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    font-family:sans-serif;
+    
 }
 
-
+.fa-window-close{
+    font-size: 40px;
+}
 
 
 .pasekg{

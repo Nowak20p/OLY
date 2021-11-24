@@ -65,7 +65,7 @@
     <div class="og1"> <img src="dom1.jpg" alt="komplet wypoczynkowy"  onclick="pojawianie(6)"> <p class="nazwa_pro">Komplet wypoczynkowy</p> <p class="cena">200 zł</p><p class="szczeg">Aby zobaczyć sczegóły kliknij na zdjęcie</p><i class="fas fa-cart-arrow-down" onclick="dodawanie_k('Komplet wypoczynkowy','200 zł',6)" ></i> <p class="k2">Dodaj do koszyka </p>
     </div>
     
-    <div class="og2" > <img src="dom2.jpg" alt="Traktorek" onclick="pojawianie(7)"> <p class="nazwa_pro">Traktorek kosiarka viking piękny !!</p> <p class="cena"> 4 200 zł</p><p class="szczeg">Aby zobaczyć sczegóły kliknij na zdjęcie</p><i class="fas fa-cart-arrow-down" onclick="dodawanie_k('Traktorek kosiarka viking piękny !!',' 4200 zł',7)" ></i> <p class="k2">Dodaj do koszyka </p>
+    <div class="og2" > <img src="dom2.jpg" alt="Traktorek" onclick="pojawianie(7)"> <p class="nazwa_pro">Traktorek kosiarka viking piękny !!</p> <p class="cena"> 4 200 zł</p><p class="szczeg">Aby zobaczyć sczegóły kliknij na zdjęcie</p><i class="fas fa-cart-arrow-down" onclick="dodawanie_k('Traktorek kosiarka viking piękny !!','4200 zł',7)" ></i> <p class="k2">Dodaj do koszyka </p>
     </div>
     
     <div class="og3" > <img src="dom3.jpg" alt="brama rolowana" onclick="pojawianie(8)"> <p class="nazwa_pro">Brama rolowana 265 cm szer x 215 cm wys ANTYWŁAMANIOWA! Wyprzedaż!</p> <p class="cena">3 000 zł</p><p class="szczeg">Aby zobaczyć sczegóły kliknij na zdjęcie</p><i class="fas fa-cart-arrow-down" onclick="dodawanie_k('Brama rolowana 265 cm szer x 215 cm wys ANTYWŁAMANIOWA! Wyprzedaż!','3000 zł',8)" ></i> <p class="k2">Dodaj do koszyka </p>
@@ -90,7 +90,7 @@
 
 <div class="og1_szczeg">
 <img class="img_auto" src="sam1.jpg" alt="audi">
-<div class="czlowiek"> <img src="ziom1.jpg" alt="ziomek" class="ziomek"> <p class="adres"> Adres: Brodnica, Kujawsko-pomorskie</p> <p class="dane">Miguel <br> Kontakt: 799 883 994</p>  <img src="mapka1.svg" alt="mapa" class="mapka"></div>
+<div class="czlowiek"> <img src="ziom1.jpg" alt="ziomek" class="ziomek"> <p class="adres"> Adres: Brodnica, Kujawsko-pomorskie</p> <p class="dane">Miguel <br> Kontakt: 799 883 994</p>  <a  class="mapaaa" href="https://www.google.pl/maps/place/Brodnica/@53.2579746,19.3373524,12z/data=!3m1!4b1!4m5!3m4!1s0x471d1f69f9ed6449:0x4ca88b9b393c0e9c!8m2!3d53.2599703!4d19.3956618"><img src="mapka1.svg" alt="mapa" class="mapka"></a></div>
 <p class="nazwa_auta">Audi A4 B6 1.8T 2004r BEX Sline LPG </p> <p class="cena_auta">19 500 zł</p>
 <h2>Opis</h2>
 <p class="opis1">Audi A4 B6 1.8T BEX 190KM Sline
@@ -118,8 +118,9 @@
 
 <script>
   
-let suma=0
+
 function dodawaanie(){
+    let suma=0
     for (let i = 0; i < document.querySelectorAll(".licz").length; i++) {
     
     suma+=parseInt(document.querySelectorAll(".licz")[i].textContent.split(" ")[0] )
@@ -139,29 +140,44 @@ function elementy(nazwa,cena) {
     
 
 }
-
+// <i class="far fa-window-close"></i>
 function dodawanie_k(nazwa,cena,i){
+    let iks = document.createElement("i")
 let divv = document.createElement("div")
 let ii = document.createElement("i")
 let pp = document.createElement("p")
 let ppp = document.createElement("p")
+iks.className="far fa-window-close"
 divv.className="element_k "
 ii.className="fas fa-shopping-basket iii"
 ppp.className="licz"
 pp.innerHTML=nazwa
 ppp.innerHTML=cena
+
+iks.addEventListener("click",function(){
+    divv.remove()
+    dodawaanie()
+})
+
+
 divv.appendChild(ii)
 divv.appendChild(pp)
 divv.appendChild(ppp)
+divv.appendChild(iks)
 
 document.querySelector(".koszyk").appendChild(divv)
-alert("Sodano do koszyka")
+alert("Dodano do koszyka")
 
 
 document.querySelectorAll('.fa-cart-arrow-down')[i].onclick = null;
 dodawaanie()
 
 }
+
+
+
+
+
 
 
 
@@ -197,12 +213,13 @@ let y=document.querySelectorAll(".d1")
 }
 ogloszenie=document.getElementsByClassName("og1_szczeg")[0]
 
-function jakos(zdj,osoba,opis_p,nazwa,cena_p) {
+function jakos(zdj,osoba,opis_p,nazwa,cena_p,lokalizacja) {
     this.zdj=zdj
     this.osoba=osoba
     this.opis_p=opis_p
     this.nazwa=nazwa
     this.cena_p=cena_p
+    this.lokalizacja=lokalizacja
 
 
 }
@@ -225,29 +242,29 @@ function jakos1(ziom,imie,numer_t,adres_zioma) {
 
 
 let cos=new Array()
-cos.push(new jakos("sam1.jpg",new jakos1("ziom1.jpg","Miguel","799 883 994","Adres: Brodnica, Kujawsko-pomorskie"),"Audi A4 B6 1.8T BEX 190KM SlineAuto zadbane w wersji Sline środek nie zniszczony wszystko w aucie działa i nie świecą się żadne błędy! Auto wyposażone w najlepsza jednostkę napędowa 1.8T o oznaczeniu BEX dysponująca mocą 190KM W aucie została założona instalacja LPG Audi na ta chwile nie wymaga wkładu finansowego blacharsko prezentuje się świetnie w zawieszeniu nie słychać żadnych niepokojących dźwięków. Felgi 18” z rocznymi oponami stan jak nowe. Rozrząd robiony był 20tys km temu. Ubezpieczenie i przegląd techniczny do Lutego Osoby zainteresowane zakupem zapraszam na oględziny po wcześniejszym umówieniu","Audi A4 B6 1.8T 2004r BEX Sline LPG ","19 500 zł"))
+cos.push(new jakos("sam1.jpg",new jakos1("ziom1.jpg","Miguel","799 883 994","Adres: Brodnica, Kujawsko-pomorskie"),"Audi A4 B6 1.8T BEX 190KM SlineAuto zadbane w wersji Sline środek nie zniszczony wszystko w aucie działa i nie świecą się żadne błędy! Auto wyposażone w najlepsza jednostkę napędowa 1.8T o oznaczeniu BEX dysponująca mocą 190KM W aucie została założona instalacja LPG Audi na ta chwile nie wymaga wkładu finansowego blacharsko prezentuje się świetnie w zawieszeniu nie słychać żadnych niepokojących dźwięków. Felgi 18” z rocznymi oponami stan jak nowe. Rozrząd robiony był 20tys km temu. Ubezpieczenie i przegląd techniczny do Lutego Osoby zainteresowane zakupem zapraszam na oględziny po wcześniejszym umówieniu","Audi A4 B6 1.8T 2004r BEX Sline LPG ","19 500 zł","https://www.google.pl/maps/place/Brodnica/@53.2579746,19.3373524,12z/data=!3m1!4b1!4m5!3m4!1s0x471d1f69f9ed6449:0x4ca88b9b393c0e9c!8m2!3d53.2599703!4d19.3956618"))
 
-cos.push(new jakos("sam2.jpg",new jakos1("ziom2.jpg","Thomas","235 299 173","Adres: Łódź, Śródmieście Łódzkie"),"DO SPRZEDANIA ŚLICZNA HONDA CIVIC Z 2008R. HONDA WYPOSAŻONA JEST W REWELACYJNY SILNIK BENZYNOWY 1.4 83KM ORAZ 5 BIEGOWĄ MANUALNĄ SKRZYNIĘ BIEGÓW. Silnik ten to bezawaryjna ciesząca się świetnymi opiniami jednostka. Ponadto silnik ten posiada łańcuch rozrządu więc nowy nabywca nie musi martwić się wymianą. Honda od nowości miała tylko jednego właściciela. Jest świeżo sprowadzona z Niemiec i nie jeździła jeszcze po naszych drogach. Auto ma 100% autentyczny przebieg przebieg potwierdzony fakturami oraz ostatnim wydrukiem z TUV. Gwarancja przebiegu, przebieg będzie wpisany na fakturze. Honda jest bezwypadkowa i przepięknie się prezentuje. Posiada piękny i lśniący lakier bez jakichkolwiek oznak korozji. Wnętrze również ładnie utrzymane. Silnik oraz wszystkie podzespoły w bardzo dobrym stanie. Silnik jest suchy i pięknie pracuje. Skrzynia i sprzęgło również działają rewelacyjnie. Zawieszenie auta w bardzo dobrym stanie, żadnych niepokojących odgłosów. Auto obecnie ma założone opony wielosezonowe w bardzo dobrym stanie. Honda była na bieżąco serwisowana i nie wymaga obecnie żadnych nakładów finansowych. Honda pięknie się prezentuje i świetnie sprawdzi się jako auto miejskie oraz rodzinne na dalsze wypady. Wielkim atutem hondy jest jej ponadczasowy wygląd oraz bezawaryjność.","Honda Civic 1.4benz, 2008r","19 900 zł"))
+cos.push(new jakos("sam2.jpg",new jakos1("ziom2.jpg","Thomas","235 299 173","Adres: Łódź, Śródmieście Łódzkie"),"DO SPRZEDANIA ŚLICZNA HONDA CIVIC Z 2008R. HONDA WYPOSAŻONA JEST W REWELACYJNY SILNIK BENZYNOWY 1.4 83KM ORAZ 5 BIEGOWĄ MANUALNĄ SKRZYNIĘ BIEGÓW. Silnik ten to bezawaryjna ciesząca się świetnymi opiniami jednostka. Ponadto silnik ten posiada łańcuch rozrządu więc nowy nabywca nie musi martwić się wymianą. Honda od nowości miała tylko jednego właściciela. Jest świeżo sprowadzona z Niemiec i nie jeździła jeszcze po naszych drogach. Auto ma 100% autentyczny przebieg przebieg potwierdzony fakturami oraz ostatnim wydrukiem z TUV. Gwarancja przebiegu, przebieg będzie wpisany na fakturze. Honda jest bezwypadkowa i przepięknie się prezentuje. Posiada piękny i lśniący lakier bez jakichkolwiek oznak korozji. Wnętrze również ładnie utrzymane. Silnik oraz wszystkie podzespoły w bardzo dobrym stanie. Silnik jest suchy i pięknie pracuje. Skrzynia i sprzęgło również działają rewelacyjnie. Zawieszenie auta w bardzo dobrym stanie, żadnych niepokojących odgłosów. Auto obecnie ma założone opony wielosezonowe w bardzo dobrym stanie. Honda była na bieżąco serwisowana i nie wymaga obecnie żadnych nakładów finansowych. Honda pięknie się prezentuje i świetnie sprawdzi się jako auto miejskie oraz rodzinne na dalsze wypady. Wielkim atutem hondy jest jej ponadczasowy wygląd oraz bezawaryjność.","Honda Civic 1.4benz, 2008r","19 900 zł","https://www.google.pl/maps/place/Śródmieście,+90-001+Łódź/@51.7645625,19.4393269,13z/data=!3m1!4b1!4m5!3m4!1s0x471bcb3289ed81c5:0x7715a305088b63a!8m2!3d51.7709492!4d19.4617189"))
 
-cos.push(new jakos("sam3.jpg",new jakos1("ziom3.jpg","Lidia","864 168 107","Adres: Ruda Śląska, Śląskie"),"Sprzedam Fiata Pandę Vana z 2003 r. 1,1+LPG działa na obu paliwach Fiacik jest w bardzo dobrym stanie technicznym mimo tego że ma 18lat i posiada oczywiście lekkie wgniotki czy rysy na karoserii. Auto serwisowane na bieżąco , na dzień dzisiejszy nie wymaga absolutnie żadnego wkładu finansowego","Fiat Panda Van 1,1","3 500 zł"))
+cos.push(new jakos("sam3.jpg",new jakos1("ziom3.jpg","Lidia","864 168 107","Adres: Ruda Śląska, Śląskie"),"Sprzedam Fiata Pandę Vana z 2003 r. 1,1+LPG działa na obu paliwach Fiacik jest w bardzo dobrym stanie technicznym mimo tego że ma 18lat i posiada oczywiście lekkie wgniotki czy rysy na karoserii. Auto serwisowane na bieżąco , na dzień dzisiejszy nie wymaga absolutnie żadnego wkładu finansowego","Fiat Panda Van 1,1","3 500 zł","https://www.google.pl/maps/place/Ruda+Śląska/@50.2701092,18.803464,12z/data=!3m1!4b1!4m5!3m4!1s0x4716cd24589e39b5:0xeb0357f65372cf8f!8m2!3d50.2558286!4d18.8555704"))
 
-cos.push(new jakos("ele1.jpg",new jakos1("ziom4.jpg","Jędrzej","978 813 577","Adres: Kraków, Łagiewniki-Borek Fałęcki Małopolskie"),"Maszyna czysta, zadbana, czyszczona i oliwiona na bieżąco. To bardzo dobry model Pfaff, wykonany na metalowych podzespołach. Przeszyje z łatwością dżins i skórę. Pracuje cicho i stabilnie.","Maszyna do szycia","200 zł"))
+cos.push(new jakos("ele1.jpg",new jakos1("ziom4.jpg","Jędrzej","978 813 577","Adres: Kraków, Łagiewniki-Borek Fałęcki Małopolskie"),"Maszyna czysta, zadbana, czyszczona i oliwiona na bieżąco. To bardzo dobry model Pfaff, wykonany na metalowych podzespołach. Przeszyje z łatwością dżins i skórę. Pracuje cicho i stabilnie.","Maszyna do szycia","200 zł","https://www.google.pl/maps/place/Łagiewniki-Borek+Fałęcki,+Kraków/@50.0159025,19.9088711,14z/data=!3m1!4b1!4m5!3m4!1s0x47165cbf672e523d:0xacae48019464dadc!8m2!3d50.017391!4d19.9264494"))
 
-cos.push(new jakos("ele2.jpg",new jakos1("ziom5.jpg","Patrycja","691 438 633","Adres: Piaseczno, Mazowieckie"),"Witam, do sprzedania mam konsole Xbox 360, w dobrym stanie, używana sporadycznie, sprawna wraz z okablowaniem. Do konsoli dodaję 8 gier. (Widoczne na zdjeciu). Możliwa wysyłka.","Konsola Xbox 360 + Pad + 8 Gier","300 zł"))
+cos.push(new jakos("ele2.jpg",new jakos1("ziom5.jpg","Patrycja","691 438 633","Adres: Piaseczno, Mazowieckie"),"Witam, do sprzedania mam konsole Xbox 360, w dobrym stanie, używana sporadycznie, sprawna wraz z okablowaniem. Do konsoli dodaję 8 gier. (Widoczne na zdjeciu). Możliwa wysyłka.","Konsola Xbox 360 + Pad + 8 Gier","300 zł","https://www.google.pl/maps/place/05-500+Piaseczno/@52.0733894,20.9821405,13z/data=!3m1!4b1!4m5!3m4!1s0x47192e390fc40201:0x88c75a9c7e7a1bf5!8m2!3d52.0811536!4d21.0238602"))
 
-cos.push(new jakos("ele3.jpg",new jakos1("ziom6.jpg","Martyna","194 993 268","Adres: Rusiec, Mazowieckie"),"Mysz do gier CORSAIR SABER PRO została zaprojektowana i przetestowana przez profesjonalistów e-sportowych, ultralekka 69g, wyposażona w elastyczny kabel z paracordu redukujący opór, który zapewnia responsywne, niczym nieskrępowane ruchy. Przyciski CORSAIR QUICKSTRIKE zapewniają, że każde kliknięcie jest natychmiastowe i responsywne, a technologia CORSAIR AXON dostarcza dane wejściowe do komputera nawet 8 razy szybciej. ","Corsair Sabre PRO RGB USB - Mysz dla gracza gamingowa","170 zł"))
+cos.push(new jakos("ele3.jpg",new jakos1("ziom6.jpg","Martyna","194 993 268","Adres: Rusiec, Mazowieckie"),"Mysz do gier CORSAIR SABER PRO została zaprojektowana i przetestowana przez profesjonalistów e-sportowych, ultralekka 69g, wyposażona w elastyczny kabel z paracordu redukujący opór, który zapewnia responsywne, niczym nieskrępowane ruchy. Przyciski CORSAIR QUICKSTRIKE zapewniają, że każde kliknięcie jest natychmiastowe i responsywne, a technologia CORSAIR AXON dostarcza dane wejściowe do komputera nawet 8 razy szybciej. ","Corsair Sabre PRO RGB USB - Mysz dla gracza gamingowa","170 zł","https://www.google.pl/maps/place/05-830+Rusiec/@52.0515774,20.7958001,11.46z/data=!4m5!3m4!1s0x47193768861494c1:0x43b167092fb4b484!8m2!3d52.0657501!4d20.8038911"))
 
-cos.push(new jakos("dom1.jpg",new jakos1("ziom7.jpg","Albert","519 076 585","Adres: Tarnów, Małopolskie"),"Mamy do zaoferowania Państwu kanapę i 2 fotele ( komplet) , bardzo solidnie wykonany, funkcjonalny, praktyczny w skład którego wchodzi kanapa HADDON z funkcją spania wysuwaną do przodu i pojemnikiem na pościel oraz 2 fotele typu FINKA na giętych stelażach z tapicerowanymi podłokietnikami. Zestaw wykonany jest w prawdziwej, naturalnej skórze w całości dokoła (plecy-tyły również) , wszystko w skórze bez wstawek z eko skóry jak to często bywa u innych producentów. Siedzisko sofy na sprężynach bonelowych.","Komplet wypoczynkowy","200 zł"))
+cos.push(new jakos("dom1.jpg",new jakos1("ziom7.jpg","Albert","519 076 585","Adres: Tarnów, Małopolskie"),"Mamy do zaoferowania Państwu kanapę i 2 fotele ( komplet) , bardzo solidnie wykonany, funkcjonalny, praktyczny w skład którego wchodzi kanapa HADDON z funkcją spania wysuwaną do przodu i pojemnikiem na pościel oraz 2 fotele typu FINKA na giętych stelażach z tapicerowanymi podłokietnikami. Zestaw wykonany jest w prawdziwej, naturalnej skórze w całości dokoła (plecy-tyły również) , wszystko w skórze bez wstawek z eko skóry jak to często bywa u innych producentów. Siedzisko sofy na sprężynach bonelowych.","Komplet wypoczynkowy","200 zł","https://www.google.pl/maps/place/33-100+Tarnów/@50.0262329,20.9066945,12z/data=!3m1!4b1!4m5!3m4!1s0x473d834352c3ffc7:0xcf1a70dff872f61e!8m2!3d50.0121011!4d20.9858407"))
 
-cos.push(new jakos("dom2.jpg",new jakos1("ziom8.jpg","Róża ","798 883 994","Adres: Grodków, Opolskie"),"Witam sprzedam traktorek kosiarka viking cyclon z silnikiem briggsa skrzynia biegów hydrostatyczna kosisko niemalowane dwa noże cały traktor niemalowany oryginalny lakier po serwisie godny uwagi.","Traktorek kosiarka viking piękny !!","4 200 zł"))
+cos.push(new jakos("dom2.jpg",new jakos1("ziom8.jpg","Róża ","798 883 994","Adres: Grodków, Opolskie"),"Witam sprzedam traktorek kosiarka viking cyclon z silnikiem briggsa skrzynia biegów hydrostatyczna kosisko niemalowane dwa noże cały traktor niemalowany oryginalny lakier po serwisie godny uwagi.","Traktorek kosiarka viking piękny !!","4 200 zł","https://www.google.pl/maps/place/Grodków/@50.6941809,17.3621625,14z/data=!3m1!4b1!4m5!3m4!1s0x4711cd4299792dff:0xb937d6da63a308b1!8m2!3d50.69625!4d17.38516"))
 
-cos.push(new jakos("dom3.jpg",new jakos1("ziom9.jpg","Helena ","799 111 994","Adres: Warszawa, Śródmieście Mazowieckie"),"brama rolowana na ocieplonym i mocnym profilu 52 mm!!! wersja ANTYWŁAMANIOWA! blokada możliwości podważenia od spodu!","Brama rolowana 265 cm szer x 215 cm wys ANTYWŁAMANIOWA! Wyprzedaż!","3 000zł"))
+cos.push(new jakos("dom3.jpg",new jakos1("ziom9.jpg","Helena ","799 111 994","Adres: Warszawa, Śródmieście Mazowieckie"),"brama rolowana na ocieplonym i mocnym profilu 52 mm!!! wersja ANTYWŁAMANIOWA! blokada możliwości podważenia od spodu!","Brama rolowana 265 cm szer x 215 cm wys ANTYWŁAMANIOWA! Wyprzedaż!","3 000zł","https://www.google.pl/maps/place/Mazowiecka,+Warszawa/@52.2364376,21.0002864,14.71z/data=!4m5!3m4!1s0x471ecc600228bc11:0xf62bc70739bb8026!8m2!3d52.2375329!4d21.0130861"))
 
-cos.push(new jakos("spo1.jpg",new jakos1("ziom10.jpg","Julia","799 883 221","Adres: Warszawa, Mokotów Mazowieckie"),"Rower męski koła 26 stan bardzo dobry. Serwisowany.","Bianchi Impulso Veloce r. 57 Celeste"," 3 200zł"))
+cos.push(new jakos("spo1.jpg",new jakos1("ziom10.jpg","Julia","799 883 221","Adres: Warszawa, Mokotów Mazowieckie"),"Rower męski koła 26 stan bardzo dobry. Serwisowany.","Bianchi Impulso Veloce r. 57 Celeste"," 3 200zł","https://www.google.pl/maps/place/Mokotów,+Warszawa/@52.1925473,21.0089122,13z/data=!3m1!4b1!4m5!3m4!1s0x471eccd14b5b277d:0x8b012320b4caccc!8m2!3d52.194157!4d21.0346955"))
 
-cos.push(new jakos("spo2.jpg",new jakos1("ziom11.jpg","Mohamed","799 883 332","Adres: Brzezina, Dolnośląskie"),"Jestem drugim właścicielem. Wypadałoby sprawdzić bebechy, ponieważ trzeba będzie poprawić ew. wymienić hopka, gdyż czasem potrafi nie podać kulki. Co prawda podaje wszystkie w momencie podtrzymania magazynka, ale wątpię, że trzymanie za magazynek jest wygodne. Replikę mam około 3 lat. Wypluła max 2kg kulek.","ASR boar 118 Replika ASG 450 fps","4 200zł"))
+cos.push(new jakos("spo2.jpg",new jakos1("ziom11.jpg","Mohamed","799 883 332","Adres: Brzezina, Dolnośląskie"),"Jestem drugim właścicielem. Wypadałoby sprawdzić bebechy, ponieważ trzeba będzie poprawić ew. wymienić hopka, gdyż czasem potrafi nie podać kulki. Co prawda podaje wszystkie w momencie podtrzymania magazynka, ale wątpię, że trzymanie za magazynek jest wygodne. Replikę mam około 3 lat. Wypluła max 2kg kulek.","ASR boar 118 Replika ASG 450 fps","4 200zł","https://www.google.pl/maps/place/55-330+Brzezina/@51.2007898,16.8258743,15z/data=!3m1!4b1!4m5!3m4!1s0x470f94413c1c2323:0x5f7af25c70024444!8m2!3d51.2007772!4d16.8346505"))
 
-cos.push(new jakos("spo3.jpg",new jakos1("ziom12.jpg","Aleksander ","111 222 443","Adres: Tarczyn, Mazowieckie"),"Idealna na jezioro, rzekę czy staw. Wykona z włókna węglowego Wędka uzbrojona w trwałe przelotki wypełnione ceramiką Rękojeść wykonana z korka i miękkiej pianki Wykonana w estetyczny, klasyczny sposóbw komplecie pokrowiec","Wędka SHIMANO Yasei Pike Spinning 2,50m 30-90 gr","400 zł"))
+cos.push(new jakos("spo3.jpg",new jakos1("ziom12.jpg","Aleksander ","111 222 443","Adres: Tarczyn, Mazowieckie"),"Idealna na jezioro, rzekę czy staw. Wykona z włókna węglowego Wędka uzbrojona w trwałe przelotki wypełnione ceramiką Rękojeść wykonana z korka i miękkiej pianki Wykonana w estetyczny, klasyczny sposóbw komplecie pokrowiec","Wędka SHIMANO Yasei Pike Spinning 2,50m 30-90 gr","400 zł","https://www.google.pl/maps/place/05-555+Tarczyn/@51.9850486,20.8144376,14z/data=!3m1!4b1!4m5!3m4!1s0x47193b0b2fe17f65:0x97974aac6c6225cb!8m2!3d51.9823186!4d20.8344906"))
 
 
 
@@ -270,6 +287,9 @@ function pojawianie(element) {
         document.getElementsByClassName("opis1")[0].innerHTML=cos[element].opis_p
         document.getElementsByClassName("nazwa_auta")[0].innerHTML=cos[element].nazwa
         document.getElementsByClassName("cena_auta")[0].innerHTML=cos[element].cena_p
+        document.getElementsByClassName("mapaaa")[0].href=cos[element].lokalizacja
+
+
         
     }
     else{
