@@ -1,10 +1,13 @@
 # Projekt-JS
 
+1. Co to i dlaczego? Sklep OLY (zrobiłem to gdyż stwierdziłem że dzieki temu przypomne sobie wiele rzeczy z js jak i z html z zeszłgo roku i nauczyłem sie też mowych rzeczy)
 
-1. Projekt JS sklep OLY  
-2. Logo (gif ooooo)LY
-3. Kategorie wraz z ikonkami (POJAZDY, ELEKTRONIKA, DOM i OGRÓD) po klikniciu w nie otwiera sie okno z przedmiotami do kupienia
-4. Po kliknieciu w Dany produkt otwiera sie okno z damym produktem
+2. Instrukcja obsugi
+
+-Dostpne są kaategorie wraz z ikonkami (POJAZDY, ELEKTRONIKA, DOM i OGRÓD) po klikniciu w nie otwiera sie okno z przedmiotami do kupienia
+-Po kliknieciu w zdjecie produktu otwiera sie okno z dodatkowymi informacjami
+-Po kliknieciu w "DODAJ DO KOSZYKA" produkt dodaje się do koszyka który można zobaczyć klikająć na jego ikonkę w prawym górnym rogu 
+ W dodatkowych informacjach po kliknięcie 
 -opis produktu 
 -cena produktu 
 -zdjecie produktu
